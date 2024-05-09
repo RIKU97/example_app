@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>本検索・貸出申請</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>本検索・貸出申請</h1>
+  <label for="search">キーワード検索:</label>
+  <input type="text" id="search" name="search" placeholder="タイトル、著者名で検索">
+  <button>検索</button>
+
+  <h2>検索結果</h2>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>著者</th>
+      <th>出版社</th>
+      <th>貸出</th>
+    </tr>
+    <!-- <tr>
+      <td>本のタイトル1</td>
+      <td>著者名1</td>
+      <td>出版社名1</td>
+      <td><button>貸出申請</button></td>
+    </tr>
+    <tr>
+      <td>本のタイトル2</td>
+      <td>著者名2</td>
+      <td>出版社名2</td>
+      <td><button>貸出申請</button></td>
+    </tr> -->
+
+    {% for book in book_lists %}
+    <tr>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.publisher }}</td>
+      <td><button>貸出申請</button></td>
+    </tr>
+    {% endfor %}
+
+
+  </table>
+</body>
+</html>

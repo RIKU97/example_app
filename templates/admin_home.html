@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>図書貸出管理システム - 管理者画面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            /* background-color: #333; */
+            background-color: #45a049;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a.active {
+            /* background-color: #555; */
+            background-color:#49bf4f;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>管理者画面</h1>
+        <nav>
+            <ul>
+                <!-- <li><a href="#" class="active" data-tab="book-management">本の管理</a></li>
+                <li><a href="#" data-tab="user-management">ユーザー管理</a></li>
+                <li><a href="#" data-tab="loan-list">貸出一覧</a></li> -->
+                <li><a href="{{ url_for('book_management') }}">本の管理</a></li>
+                <li><a href="{{ url_for('user_management') }}">ユーザー管理</a></li>
+                <li><a href="{{ url_for('rent_list') }}">貸出一覧</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="book-management" class="tab-content active">
+            <!-- 本の管理画面のコンテンツ -->
+        </div>
+
+        <div id="user-management" class="tab-content">
+            <!-- ユーザー管理画面のコンテンツ -->
+        </div>
+
+        <div id="loan-list" class="tab-content">
+            <!-- 貸出一覧画面のコンテンツ -->
+        </div>
+    </main>
+
+
+</body>
+</html>
